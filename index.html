@@ -47,15 +47,16 @@
       $(".box-1").append('<img src="images/in'+[i]+'.png" data-alt-src="images/out'+[i]+'.png">')
       }
     }
+
     $('img').hover(
       function(){
-        var temp = $(this).attr('src')
-        // $(this).fadeOut(50,function(){
+        $(this).fadeOut(100,function(){
+          // var temp = $(this).attr('src')
           $(this).fadeIn()
+          $(this).attr("temp",$(this).attr("src"))
           $(this).attr("src",$(this).attr('data-alt-src'))
-          $(this).attr('data-alt-src',temp)
-        // })
-      console.log(temp)
+          $(this).attr('data-alt-src',$(this).attr("temp"))
+        })
       }
     )
   </script>
